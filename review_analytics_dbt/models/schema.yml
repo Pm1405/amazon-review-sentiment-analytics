@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: stg_reviews
+    description: "Cleaned and standardized reviews with parsed dates and cast star ratings"
+    columns:
+      - name: review_id
+        description: "Unique review identifier"
+        tests:
+          - not_null
+          - unique
+      - name: star_rating
+        description: "Star rating as a number (1-5)"
+        tests:
+          - not_null
+      - name: sentiment_label
+        description: "AI-detected sentiment category"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Positive', 'Negative', 'Neutral']
+      - name: department
+        description: "Main product department"
+        tests:
+          - not_null
+
+  - name: mart_department_summary
+    description: "Aggregated department-level metrics"
+    columns:
+      - name: department
+        tests:
+          - not_null
+          - unique
+
+  - name: mart_monthly_trends
+    description: "Daily and monthly sentiment trends by department"
+    columns:
+      - name: review_date
+        tests:
+          - not_null
+
+  - name: mart_subdepartment_summary
+    description: "Sub-department level performance metrics"
