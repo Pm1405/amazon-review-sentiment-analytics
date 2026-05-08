@@ -1,0 +1,12 @@
+review_analytics_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: ""
+      user: ""
+      role: "ACCOUNTADMIN"
+      database: "REVIEW_ANALYTICS"
+      warehouse: "COMPUTE_WH"
+      schema: "ANALYTICS"
+      threads: 4
