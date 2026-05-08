@@ -171,8 +171,24 @@ dbt test --project-dir /review_analytics_dbt     # Runs 9 quality tests
 7	not_null (department)	mart_department_summary	✅ PASS
 8	unique (department)	mart_department_summary	✅ PASS
 9	not_null (review_date)	mart_monthly_trends	✅ PASS
+
 📈 Dashboard Screenshots
-Add screenshots of each tab here
+<img width="919" height="362" alt="image" src="https://github.com/user-attachments/assets/b69dd6ba-3718-42ad-86b5-969afa59c6a0" />
+<img width="875" height="379" alt="image" src="https://github.com/user-attachments/assets/5cbd7a84-1fab-4e8a-81d6-28ea3a435453" />
+<img width="890" height="383" alt="image" src="https://github.com/user-attachments/assets/d93212a6-79ae-41b8-a6d3-fd278b54b76a" />
+<img width="864" height="367" alt="image" src="https://github.com/user-attachments/assets/66017e87-22f1-4e08-bd5b-01b9c97cd8e8" />
+<img width="842" height="157" alt="image" src="https://github.com/user-attachments/assets/35460589-d28e-46b2-9015-01b478242435" />
+<img width="861" height="399" alt="image" src="https://github.com/user-attachments/assets/a595ab63-75d7-4a91-a3ea-99c8bdf7fb83" />
+<img width="863" height="363" alt="image" src="https://github.com/user-attachments/assets/7c049764-3213-4de8-a3fd-7da0b9efdd51" />
+<img width="898" height="359" alt="image" src="https://github.com/user-attachments/assets/1aa71aed-9211-4a3b-bf97-d313692f2054" />
+
+
+
+
+
+
+
+
 
 📝 Learnings
 Building end-to-end data pipelines on a modern cloud stack
