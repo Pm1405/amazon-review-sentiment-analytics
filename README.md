@@ -17,32 +17,33 @@ Star ratings alone don’t tell the full story. A customer might give 5 stars bu
 ## 🏗️ Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                        DATA PIPELINE                             │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  Kaggle CSV — 72,500 reviews                                      │
-│       │                                                          │
-│       ▼                                                          │
-│  Snowflake: REVIEW_ANALYTICS.RAW.AMAZON_REVIEWS                   │
-│       │                                                          │
-│       ▼                                                          │
-│  Cortex AI: SENTIMENT() — NLP scoring                            │
-│       │                                                          │
-│       ▼                                                          │
-│  REVIEW_ANALYTICS.RAW.REVIEWS_WITH_SENTIMENT                     │
-│       │                                                          │
-│       ▼                                                          │
-│  dbt: staging layer — cleans, parses, casts                        │
-│       │                                                          │
-│       ├──▶ mart_department_summary                               │
-│       ├──▶ mart_subdepartment_summary                            │
-│       └──▶ mart_monthly_trends                                   │
-│                │                                                  │
-│                ▼                                                  │
-│  Streamlit Dashboard — 5 interactive tabs                         │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────┐
+│                        DATA PIPELINE                           │
+├────────────────────────────────────────────────────────────────┤
+│                                                                │
+│  Kaggle CSV — 72,500 reviews                                   │
+│       │                                                        │
+│       ▼                                                        │
+│  Snowflake: REVIEW_ANALYTICS.RAW.AMAZON_REVIEWS                │
+│       │                                                        │
+│       ▼                                                        │
+│  Cortex AI: SENTIMENT() — NLP scoring                          │
+│       │                                                        │
+│       ▼                                                        │
+│  REVIEW_ANALYTICS.RAW.REVIEWS_WITH_SENTIMENT                   │
+│       │                                                        │
+│       ▼                                                        │
+│  dbt: staging layer — cleans, parses, casts                    │
+│      │                                                         │
+│      ├──▶ mart_department_summary                             │
+│      ├──▶ mart_subdepartment_summary                          │
+│       └──▶ mart_monthly_trends                                │
+│               │                                                │
+│               ▼                                                │
+│  Streamlit Dashboard — 5 interactive tabs                      │
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
