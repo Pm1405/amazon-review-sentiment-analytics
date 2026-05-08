@@ -148,7 +148,7 @@ amazon-review-sentiment-analytics/
 
 ### Steps
 
-```bash
+```
 # 1. Run SQL setup scripts (in Snowflake worksheet)
 # Execute sql/01_create_database.sql
 # Upload CSV via Snowsight UI → Data → Ingestion
@@ -213,3 +213,4 @@ Source: Kaggle — Amazon Product Reviews
 Records: 72,500 reviews
 Departments: Computers, Beauty & Personal Care, Electronics, Home & Kitchen, Sports & Outdoors
 Time Range: 2008–2021
+```
