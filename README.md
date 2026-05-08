@@ -210,4 +210,3 @@ Aspiring Data Engineer / Analyst
 
 ---
 
-If you’d like any sections expanded (e.g., code snippets, exact SQL/model contents, or more detailed runbooks), tell me which parts to flesh out and I’ll add them.
