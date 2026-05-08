@@ -204,7 +204,7 @@ Aspiring Data Engineer / Analyst
 
 ## 📄 Dataset
 
-- Source: Kaggle — Amazon Product Reviews
+- Source: https://www.kaggle.com/datasets/yeshmesh/inconsistent-and-consistent-amazon-reviews
 - Records: 72,500 reviews
 - Departments: Computers, Beauty & Personal Care, Electronics, Home & Kitchen, Sports & Outdoors
 - Time Range: 2008–2021
