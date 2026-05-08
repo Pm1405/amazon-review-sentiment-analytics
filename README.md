@@ -15,8 +15,35 @@ Star ratings alone don't tell the full story. A customer might give 5 stars but 
 ---
 
 ## 🏗️ Architecture
-┌─────────────────────────────────────────────────────────────────┐ │ DATA PIPELINE │ ├─────────────────────────────────────────────────────────────────┤ │ │ │ [Kaggle CSV — 72,500 reviews] │ │ │ │ │ ▼ │ │ [Snowflake: REVIEW_ANALYTICS.RAW.AMAZON_REVIEWS] │ │ │ │ │ ▼ │ │ [Cortex AI: SENTIMENT() — NLP scoring] │ │ │ │ │ ▼ │ │ [REVIEW_ANALYTICS.RAW.REVIEWS_WITH_SENTIMENT] │ │ │ │ │ ▼ │ │ [dbt: staging layer — cleans, parses, casts] │ │ │ │ │ ├──▶ mart_department_summary │ │ ├──▶ mart_subdepartment_summary │ │ └──▶ mart_monthly_trends │ │ │ │ │ ▼ │ │ [Streamlit Dashboard — 5 interactive tabs] │ │ │ └─────────────────────────────────────────────────────────────────┘
 
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        DATA PIPELINE                             │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  [Kaggle CSV — 72,500 reviews]                                  │
+│       │                                                          │
+│       ▼                                                          │
+│  [Snowflake: REVIEW_ANALYTICS.RAW.AMAZON_REVIEWS]               │
+│       │                                                          │
+│       ▼                                                          │
+│  [Cortex AI: SENTIMENT() — NLP scoring]                         │
+│       │                                                          │
+│       ▼                                                          │
+│  [REVIEW_ANALYTICS.RAW.REVIEWS_WITH_SENTIMENT]                  │
+│       │                                                          │
+│       ▼                                                          │
+│  [dbt: staging layer — cleans, parses, casts]                   │
+│       │                                                          │
+│       ├──▶ mart_department_summary                               │
+│       ├──▶ mart_subdepartment_summary                            │
+│       └──▶ mart_monthly_trends                                   │
+│                │                                                  │
+│                ▼                                                  │
+│  [Streamlit Dashboard — 5 interactive tabs]                      │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
 ---
 
 ## 🛠️ Tech Stack
@@ -33,7 +60,34 @@ Star ratings alone don't tell the full story. A customer might give 5 stars but 
 ---
 
 ## 📁 Project Structure
-amazon-review-sentiment-analytics/ │ ├── README.md ├── .gitignore │ ├── sql/ │ ├── 01_create_database.sql # Database & schema setup │ ├── 02_sentiment_analysis.sql # Cortex AI sentiment scoring │ └── 03_analytics_queries.sql # Ad-hoc analysis queries │ ├── review_analytics_dbt/ # dbt transformation project │ ├── dbt_project.yml # Project configuration │ ├── profiles.yml # Snowflake connection │ ├── models/ │ │ ├── sources.yml # Source declarations │ │ ├── schema.yml # Tests & documentation (9 tests) │ │ ├── staging/ │ │ │ └── stg_reviews.sql # Data cleaning & type casting │ │ └── marts/ │ │ ├── mart_department_summary.sql │ │ ├── mart_subdepartment_summary.sql │ │ └── mart_monthly_trends.sql │ └── streamlit/ └── streamlit_app.py # 5-tab interactive dashboard
+
+```
+amazon-review-sentiment-analytics/
+│
+├── README.md
+├── .gitignore
+│
+├── sql/
+│   ├── 01_create_database.sql        # Database & schema setup
+│   ├── 02_sentiment_analysis.sql     # Cortex AI sentiment scoring
+│   └── 03_analytics_queries.sql      # Ad-hoc analysis queries
+│
+├── review_analytics_dbt/             # dbt transformation project
+│   ├── dbt_project.yml               # Project configuration
+│   ├── profiles.yml                  # Snowflake connection
+│   └── models/
+│       ├── sources.yml               # Source declarations
+│       ├── schema.yml                # Tests & documentation (9 tests)
+│       ├── staging/
+│       │   └── stg_reviews.sql       # Data cleaning & type casting
+│       └── marts/
+│           ├── mart_department_summary.sql
+│           ├── mart_subdepartment_summary.sql
+│           └── mart_monthly_trends.sql
+│
+└── streamlit/
+    └── streamlit_app.py              # 5-tab interactive dashboard
+```
 
 ## 🔑 Key Features
 
