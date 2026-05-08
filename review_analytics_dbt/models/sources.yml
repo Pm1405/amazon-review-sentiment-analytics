@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: raw
+    database: REVIEW_ANALYTICS
+    schema: RAW
+    tables:
+      - name: reviews_with_sentiment
+        description: "Amazon product reviews with AI sentiment scores from Cortex"
+        columns:
+          - name: REVIEWID
+            description: "Unique review identifier"
+          - name: REVIEWDATE
+            description: "Raw review date string"
+          - name: MAINDEPARTMENT
+            description: "Top-level product department"
+          - name: SUBDEPARTMENT
+            description: "Product sub-category"
+          - name: PRODUCTNAME
+            description: "Full product name"
+          - name: REVIEWTITLE
+            description: "Review headline"
+          - name: REVIEWSTAR
+            description: "Star rating (as string, may contain dirty data)"
+          - name: REVIEWTEXT
+            description: "Full review text"
+          - name: INCONSISTENTSTATUS
+            description: "Original inconsistency flag from dataset"
+          - name: AI_SENTIMENT_SCORE
+            description: "Cortex AI sentiment score (-1 to 1)"
+          - name: AI_SENTIMENT_LABEL
+            description: "Positive, Negative, or Neutral"
